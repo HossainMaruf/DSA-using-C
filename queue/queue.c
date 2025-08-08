@@ -6,11 +6,10 @@ int isEmpty(void) { return (front == -1) && (rear == -1); }
 int size(void) { return rear+1; }
 int isFull(void) { return (size() == QUEUE_SIZE) ? 1 : 0; }
 
-int enqueue(Type item) {
+Type enqueue(Type item) {
     if(isFull()) return -1; // no space for enqueue
     if(isEmpty()) front = 0; // first time push so front should be 0
-    queue[++rear] = item;  // enqueue the item
-    return 1;  // successful
+    return queue[++rear] = item;  // enqueue the item and return it
 }
 
 Type dequeue(void) {
@@ -26,4 +25,4 @@ Type dequeue(void) {
     }
 }
 
-int first(void) { return isEmpty() ? -1 : queue[front]; }
+Type first(void) { return isEmpty() ? -1 : queue[front]; }

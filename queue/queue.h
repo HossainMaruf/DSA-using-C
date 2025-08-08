@@ -9,8 +9,9 @@ extern int front, rear;
 extern Type queue[QUEUE_SIZE];
 extern int isEmpty(void);
 extern int size(void);
-extern int enqueue(Type);
-extern int dequeue(void);
-extern int first(void);
+extern int isFull(void);
+extern Type enqueue(Type);
+extern Type dequeue(void);
+extern Type first(void);
 
 #endif
