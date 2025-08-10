@@ -4,14 +4,17 @@
 #define QUEUE_SIZE 50
 
 typedef int Type;
+typedef struct {
+    int front, rear;
+    Type data[QUEUE_SIZE];
+} Queue;
 
-extern int front, rear;
-extern Type queue[QUEUE_SIZE];
-extern int isEmpty(void);
-extern int size(void);
-extern int isFull(void);
-extern Type enqueue(Type);
-extern Type dequeue(void);
-extern Type first(void);
+extern void initializeQueue(Queue*);
+extern int isEmpty(Queue*);
+extern int size(Queue*);
+extern int isFull(Queue*);
+extern Type enqueue(Queue*, Type);
+extern Type dequeue(Queue*);
+extern Type first(Queue*);
 
 #endif
