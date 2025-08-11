@@ -2,17 +2,22 @@
 #include "stack.h"
 
 void main() {
-   push(10);
-   push(20); 
-   printf("Size = %d\n", size());
-   printf("Pop = %d\n", pop());
-   printf("Pop = %d\n", pop());
-   printf("Pop = %d\n", pop());
-   push(100);
-   push(200);
-   push(300);
-   printf("Pop = %d\n", pop());
-   printf("Pop = %d\n", pop());
-   printf("Size = %d\n", size());
-   printf("Peek = %d\n", peek());
+   Stack st, st2;
+   initializeStack(&st);
+   initializeStack(&st2);
+   push(&st, 10);
+   push(&st2, 20); 
+   push(&st2, 30); 
+   printf("Size = %d\n", size(&st)); // 1
+   printf("Size = %d\n", size(&st2)); // 2
+   printf("Pop = %d\n", pop(&st)); // 10
+   printf("Pop = %d\n", pop(&st2)); // 30
+   printf("Pop = %d\n", pop(&st)); // -1
+   push(&st2, 100);
+   push(&st2, 200);
+   push(&st2, 300);
+   printf("Pop = %d\n", pop(&st2));
+   printf("Pop = %d\n", pop(&st2));
+   printf("Size = %d\n", size(&st2)); // 2
+   printf("Peek = %d\n", peek(&st2)); // 100
 }

@@ -1,23 +1,20 @@
 #include <stdbool.h>
 #include "stack.h"
 
-
-int top = -1;
-Type stack[STACK_SIZE];
-
-bool isEmpty() { return top == -1; }
-int size() { return top+1; }
-bool isFull() { return size() == STACK_SIZE; }
-Type push(Type data) {
-    if(isFull()) return -1; // unsuccesful
-    return stack[++top] = data;
+void initializeStack(Stack* st) { st->top = -1; }
+bool isEmpty(Stack* st) { return st->top == -1; }
+int size(Stack* st) { return (st->top)+1; }
+bool isFull(Stack* st) { return size(st) == STACK_SIZE; }
+Type push(Stack* st, Type data) {
+    if(isFull(st)) return -1; // unsuccesful
+    return st->data[++st->top] = data;
 }
-Type peek() { 
-    if(isEmpty()) return -1;
-    return stack[top];
+Type peek(Stack* st) { 
+    if(isEmpty(st)) return -1;
+    return st->data[st->top];
 }
 
-Type pop() {
-    if(isEmpty()) return -1;
-    return stack[top--];
+Type pop(Stack* st) {
+    if(isEmpty(st)) return -1;
+    return st->data[st->top--];
 }
