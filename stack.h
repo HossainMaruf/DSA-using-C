@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #define STACK_SIZE 50
 
-typedef int Type;
+typedef char Type;
 typedef struct {
     int top;
     Type data[STACK_SIZE];
