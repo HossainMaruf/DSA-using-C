@@ -10,7 +10,7 @@ bool isMatching(char left, char right) {
 void main() {
     Stack st;
     initializeStack(&st);
-    // char str[] = "[{()}]";
+    char str[] = "[{()}]";
     // char str[] = "{[(])}"
     // char str[] = "{{[[(())]]}}";;
     // char str[] = "{(())";
